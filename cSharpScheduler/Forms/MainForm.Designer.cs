@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
             this.dgvAppts = new System.Windows.Forms.DataGridView();
             this.btnAddCustomer = new System.Windows.Forms.Button();
@@ -51,19 +51,20 @@
             this.dgvCustomers.AllowUserToDeleteRows = false;
             this.dgvCustomers.AllowUserToResizeColumns = false;
             this.dgvCustomers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCustomers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCustomers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustomers.Location = new System.Drawing.Point(120, 60);
+            this.dgvCustomers.Location = new System.Drawing.Point(130, 74);
+            this.dgvCustomers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.RowHeadersWidth = 51;
-            this.dgvCustomers.Size = new System.Drawing.Size(476, 306);
+            this.dgvCustomers.Size = new System.Drawing.Size(635, 377);
             this.dgvCustomers.TabIndex = 0;
             // 
             // dgvAppts
@@ -72,26 +73,28 @@
             this.dgvAppts.AllowUserToDeleteRows = false;
             this.dgvAppts.AllowUserToResizeColumns = false;
             this.dgvAppts.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAppts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAppts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAppts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAppts.Location = new System.Drawing.Point(684, 60);
+            this.dgvAppts.Location = new System.Drawing.Point(812, 74);
+            this.dgvAppts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvAppts.Name = "dgvAppts";
             this.dgvAppts.RowHeadersWidth = 51;
-            this.dgvAppts.Size = new System.Drawing.Size(570, 306);
+            this.dgvAppts.Size = new System.Drawing.Size(635, 377);
             this.dgvAppts.TabIndex = 1;
             // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(233, 391);
+            this.btnAddCustomer.Location = new System.Drawing.Point(218, 472);
+            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(243, 81);
+            this.btnAddCustomer.Size = new System.Drawing.Size(324, 100);
             this.btnAddCustomer.TabIndex = 2;
             this.btnAddCustomer.Text = "Add Customer";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
@@ -99,72 +102,81 @@
             // 
             // btnModCustomer
             // 
-            this.btnModCustomer.Location = new System.Drawing.Point(233, 482);
+            this.btnModCustomer.Location = new System.Drawing.Point(218, 584);
+            this.btnModCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModCustomer.Name = "btnModCustomer";
-            this.btnModCustomer.Size = new System.Drawing.Size(243, 81);
+            this.btnModCustomer.Size = new System.Drawing.Size(324, 100);
             this.btnModCustomer.TabIndex = 3;
             this.btnModCustomer.Text = "Modify Customer";
             this.btnModCustomer.UseVisualStyleBackColor = true;
+            this.btnModCustomer.Click += new System.EventHandler(this.btnModCustomer_Click);
             // 
             // btnDelCustomer
             // 
-            this.btnDelCustomer.Location = new System.Drawing.Point(233, 573);
+            this.btnDelCustomer.Location = new System.Drawing.Point(218, 696);
+            this.btnDelCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDelCustomer.Name = "btnDelCustomer";
-            this.btnDelCustomer.Size = new System.Drawing.Size(243, 81);
+            this.btnDelCustomer.Size = new System.Drawing.Size(324, 100);
             this.btnDelCustomer.TabIndex = 4;
             this.btnDelCustomer.Text = "Delete Customer";
             this.btnDelCustomer.UseVisualStyleBackColor = true;
             // 
             // btnDelAppt
             // 
-            this.btnDelAppt.Location = new System.Drawing.Point(846, 573);
+            this.btnDelAppt.Location = new System.Drawing.Point(1035, 696);
+            this.btnDelAppt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDelAppt.Name = "btnDelAppt";
-            this.btnDelAppt.Size = new System.Drawing.Size(243, 81);
+            this.btnDelAppt.Size = new System.Drawing.Size(324, 100);
             this.btnDelAppt.TabIndex = 7;
             this.btnDelAppt.Text = "Delete Appointment";
             this.btnDelAppt.UseVisualStyleBackColor = true;
             // 
             // btnModAppt
             // 
-            this.btnModAppt.Location = new System.Drawing.Point(846, 482);
+            this.btnModAppt.Location = new System.Drawing.Point(1035, 584);
+            this.btnModAppt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModAppt.Name = "btnModAppt";
-            this.btnModAppt.Size = new System.Drawing.Size(243, 81);
+            this.btnModAppt.Size = new System.Drawing.Size(324, 100);
             this.btnModAppt.TabIndex = 6;
             this.btnModAppt.Text = "Modify Appointment";
             this.btnModAppt.UseVisualStyleBackColor = true;
             // 
             // btnAddAppt
             // 
-            this.btnAddAppt.Location = new System.Drawing.Point(846, 391);
+            this.btnAddAppt.Location = new System.Drawing.Point(1035, 472);
+            this.btnAddAppt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddAppt.Name = "btnAddAppt";
-            this.btnAddAppt.Size = new System.Drawing.Size(243, 81);
+            this.btnAddAppt.Size = new System.Drawing.Size(324, 100);
             this.btnAddAppt.TabIndex = 5;
             this.btnAddAppt.Text = "Add Appointment";
             this.btnAddAppt.UseVisualStyleBackColor = true;
             // 
             // btnCalendar
             // 
-            this.btnCalendar.Location = new System.Drawing.Point(540, 434);
+            this.btnCalendar.Location = new System.Drawing.Point(627, 525);
+            this.btnCalendar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCalendar.Name = "btnCalendar";
-            this.btnCalendar.Size = new System.Drawing.Size(243, 81);
+            this.btnCalendar.Size = new System.Drawing.Size(324, 100);
             this.btnCalendar.TabIndex = 8;
             this.btnCalendar.Text = "Calendar";
             this.btnCalendar.UseVisualStyleBackColor = true;
             // 
             // btnReports
             // 
-            this.btnReports.Location = new System.Drawing.Point(540, 521);
+            this.btnReports.Location = new System.Drawing.Point(627, 632);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(243, 81);
+            this.btnReports.Size = new System.Drawing.Size(324, 100);
             this.btnReports.TabIndex = 9;
             this.btnReports.Text = "Reports";
             this.btnReports.UseVisualStyleBackColor = true;
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(1177, 631);
+            this.btnExit.Location = new System.Drawing.Point(1385, 778);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(134, 52);
+            this.btnExit.Size = new System.Drawing.Size(179, 64);
             this.btnExit.TabIndex = 10;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -172,9 +184,9 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1323, 695);
+            this.ClientSize = new System.Drawing.Size(1577, 855);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnReports);
             this.Controls.Add(this.btnCalendar);
@@ -186,6 +198,7 @@
             this.Controls.Add(this.btnAddCustomer);
             this.Controls.Add(this.dgvAppts);
             this.Controls.Add(this.dgvCustomers);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scheduler";

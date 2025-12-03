@@ -28,12 +28,120 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.txtUsername = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblRegion = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.RichTextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnLoginExit = new System.Windows.Forms.Button();
+            this.lblError = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(114, 87);
+            this.txtUsername.Multiline = false;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(246, 29);
+            this.txtUsername.TabIndex = 0;
+            this.txtUsername.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Username";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(29, 149);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Password";
+            // 
+            // lblRegion
+            // 
+            this.lblRegion.AutoSize = true;
+            this.lblRegion.Location = new System.Drawing.Point(150, 354);
+            this.lblRegion.Name = "lblRegion";
+            this.lblRegion.Size = new System.Drawing.Size(51, 16);
+            this.lblRegion.TabIndex = 3;
+            this.lblRegion.Text = "Region";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(114, 146);
+            this.txtPassword.Multiline = false;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(246, 29);
+            this.txtPassword.TabIndex = 4;
+            this.txtPassword.Text = "";
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Location = new System.Drawing.Point(81, 251);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(129, 48);
+            this.btnLogin.TabIndex = 5;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // btnLoginExit
+            // 
+            this.btnLoginExit.Location = new System.Drawing.Point(231, 251);
+            this.btnLoginExit.Name = "btnLoginExit";
+            this.btnLoginExit.Size = new System.Drawing.Size(129, 48);
+            this.btnLoginExit.TabIndex = 6;
+            this.btnLoginExit.Text = "Exit";
+            this.btnLoginExit.UseVisualStyleBackColor = true;
+            this.btnLoginExit.Click += new System.EventHandler(this.btnLoginExit_Click);
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Location = new System.Drawing.Point(78, 211);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(36, 16);
+            this.lblError.TabIndex = 7;
+            this.lblError.Text = "Error";
+            // 
+            // LoginForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(440, 440);
+            this.Controls.Add(this.lblError);
+            this.Controls.Add(this.btnLoginExit);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.lblRegion);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtUsername);
+            this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.RichTextBox txtUsername;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblRegion;
+        private System.Windows.Forms.RichTextBox txtPassword;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnLoginExit;
+        private System.Windows.Forms.Label lblError;
     }
 }

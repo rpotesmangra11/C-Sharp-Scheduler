@@ -35,4 +35,4 @@ D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\System.Runtime.CompilerSer
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\obj\Debug\cSharpSc.9C7A37F6.Up2Date
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\obj\Debug\cSharpScheduler.AddModifyCustomerForm.resources
-D:\WGU\C969-Advanced-cSharp\cSharpScheduler\obj\Debug\cSharpScheduler.exe.config
+D:\WGU\C969-Advanced-cSharp\cSharpScheduler\obj\Debug\cSharpScheduler.LoginForm.resources

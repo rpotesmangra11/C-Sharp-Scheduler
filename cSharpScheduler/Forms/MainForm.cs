@@ -27,7 +27,7 @@ namespace cSharpScheduler
 
             dgvCustomers.ClearSelection();
             dgvAppts.ClearSelection();
-
+            dgvCustomers.CurrentCell = null;
             dgvCustomers.RowHeadersVisible = false;
             dgvCustomers.AllowUserToAddRows = false;
             dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -37,12 +37,62 @@ namespace cSharpScheduler
             dgvAppts.RowHeadersVisible = false;
             dgvAppts.AllowUserToAddRows = false;
             dgvCustomers.CellClick += dgvCustomers_CellClick;
+            dgvCustomers.Columns["customerId"].HeaderText = "Customer ID";
+            dgvCustomers.Columns["customerName"].HeaderText = "Customer Name";
+            dgvCustomers.Columns["address"].HeaderText = "Address";
+            dgvCustomers.Columns["postalCode"].HeaderText = "Postal Code";
+            dgvCustomers.Columns["phone"].HeaderText = "Phone";
+            dgvCustomers.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCustomers.ColumnHeadersDefaultCellStyle.Font = new Font(dgvCustomers.Font, FontStyle.Bold);
+            dgvCustomers.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCustomers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCustomers.MultiSelect = false;
+            dgvCustomers.ReadOnly = true;
+            dgvCustomers.AllowUserToAddRows = false;
+            dgvCustomers.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgvCustomers.ColumnHeadersDefaultCellStyle.BackColor;
+            dgvCustomers.ColumnHeadersDefaultCellStyle.SelectionForeColor = dgvCustomers.ColumnHeadersDefaultCellStyle.ForeColor;
+            dgvCustomers.EnableHeadersVisualStyles = false;
+
+
+            //Appointment
+            dgvAppts.Columns["appointmentId"].HeaderText = "Appointment ID";
+            dgvAppts.Columns["customerId"].HeaderText = "Customer ID";
+            dgvAppts.Columns["userId"].HeaderText = "User ID";
+            dgvAppts.Columns["title"].HeaderText = "Title";
+            dgvAppts.Columns["description"].HeaderText = "Description";
+            dgvAppts.Columns["location"].HeaderText = "Location";
+            dgvAppts.Columns["contact"].HeaderText = "Contact";
+            dgvAppts.Columns["type"].HeaderText = "Type";
+            dgvAppts.Columns["url"].HeaderText = "URL";
+            dgvAppts.Columns["start"].HeaderText = "Start Date";
+            dgvAppts.Columns["end"].HeaderText = "End Date";
+            dgvAppts.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvAppts.ColumnHeadersDefaultCellStyle.Font = new Font(dgvAppts.Font, FontStyle.Bold);
+            dgvAppts.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvAppts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvAppts.ScrollBars = ScrollBars.Both;
+            dgvAppts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAppts.MultiSelect = false;
+            dgvAppts.ReadOnly = true;
+            dgvAppts.AllowUserToAddRows = false;
+            dgvAppts.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvAppts.Columns["start"].DefaultCellStyle.Format = "MM/dd/yyyy hh:mm tt";
+            dgvAppts.Columns["end"].DefaultCellStyle.Format = "MM/dd/yyyy hh:mm tt";
+            dgvAppts.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgvAppts.ColumnHeadersDefaultCellStyle.BackColor;
+            dgvAppts.ColumnHeadersDefaultCellStyle.SelectionForeColor = dgvAppts.ColumnHeadersDefaultCellStyle.ForeColor;
+            dgvAppts.EnableHeadersVisualStyles = false;
+            dgvAppts.AllowUserToAddRows = false;
+
         }
+
+
 
         private void LoadCustomers()
         {
             DataTable dt = CustomerDB.GetAllCustomers();
             dgvCustomers.DataSource = dt;
+
         }
 
         private void LoadAllAppointments()
@@ -81,6 +131,25 @@ namespace cSharpScheduler
                 {                   
                     LoadCustomers();
                     dgvCustomers.ClearSelection();
+                }
+            }
+        }
+
+        private void btnModCustomer_Click(object sender, EventArgs e)
+        {
+            if (dgvCustomers.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a customer first.");
+                return;
+            }
+
+            int customerId = Convert.ToInt32(dgvCustomers.CurrentRow.Cells["customerId"].Value);
+
+            using (var form = new AddModifyCustomerForm(customerId))
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    LoadCustomers();
                 }
             }
         }

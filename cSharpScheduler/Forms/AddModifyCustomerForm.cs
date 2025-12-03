@@ -13,10 +13,37 @@ namespace cSharpScheduler
 {
     public partial class AddModifyCustomerForm : Form
     {
+        private bool _isModify = false;
+        private int _customerId;
+
         public AddModifyCustomerForm()
         {
             InitializeComponent();
+            _isModify = false;
+            lblCustomerTitle.Text = "Add Customer";   // change your label name if needed
         }
+        public AddModifyCustomerForm(int customerId)
+        {
+            InitializeComponent();
+            _isModify = true;
+            _customerId = customerId;
+
+            lblCustomerTitle.Text = "Modify Customer";
+            LoadCustomerData(customerId);
+        }
+
+        private void LoadCustomerData(int customerId)
+        {
+            var c = CustomerDB.GetCustomerById(customerId);
+
+            txtName.Text = c.Name;
+            txtAddress.Text = c.Address;
+            txtAddress2.Text = c.Address2;
+            txtPostal.Text = c.PostalCode;
+            txtPhone.Text = c.Phone;
+        }
+
+
         private void btnAddCustomerSave_Click(object sender, EventArgs e)
         {
             if (!ValidateCustomerFields())
@@ -24,19 +51,29 @@ namespace cSharpScheduler
 
             string name = txtName.Text.Trim();
             string address = txtAddress.Text.Trim();
+            string address2 = txtAddress2.Text.Trim();
             string postal = txtPostal.Text.Trim();
             string phone = txtPhone.Text.Trim();
 
             try
             {
-                CustomerDB.AddCustomer(name, address, postal, phone);
-                MessageBox.Show("Customer added successfully.");
+                if (_isModify)
+                {
+                    CustomerDB.UpdateCustomer(_customerId, name, address, address2, postal, phone);
+                    MessageBox.Show("Customer updated successfully.");
+                }
+                else
+                {
+                    CustomerDB.AddCustomer(name, address, address2, postal, phone);
+                    MessageBox.Show("Customer added successfully.");
+                }
+
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error adding customer: " + ex.Message);
+                MessageBox.Show("Error saving customer: " + ex.Message);
             }
         }
 
