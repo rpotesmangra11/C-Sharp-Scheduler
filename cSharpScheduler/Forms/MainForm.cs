@@ -1,4 +1,8 @@
-﻿using System;
+﻿using cSharpScheduler;
+using cSharpScheduler.Forms;
+using cSharpScheduler.Models;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,15 +12,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace cSharpScheduler
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private int _userId;
+
+        public MainForm(int userId)
         {
             InitializeComponent();
+            _userId = userId;
+
+            CheckUpcomingAppointments(_userId);
         }
 
 
@@ -56,6 +64,7 @@ namespace cSharpScheduler
 
 
             //Appointment
+            dgvAppts.Columns["url"].Visible = false;
             dgvAppts.Columns["appointmentId"].HeaderText = "Appointment ID";
             dgvAppts.Columns["customerId"].HeaderText = "Customer ID";
             dgvAppts.Columns["userId"].HeaderText = "User ID";
@@ -64,7 +73,6 @@ namespace cSharpScheduler
             dgvAppts.Columns["location"].HeaderText = "Location";
             dgvAppts.Columns["contact"].HeaderText = "Contact";
             dgvAppts.Columns["type"].HeaderText = "Type";
-            dgvAppts.Columns["url"].HeaderText = "URL";
             dgvAppts.Columns["start"].HeaderText = "Start Date";
             dgvAppts.Columns["end"].HeaderText = "End Date";
             dgvAppts.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -153,5 +161,135 @@ namespace cSharpScheduler
                 }
             }
         }
+
+        private void btnDelCustomer_Click(object sender, EventArgs e)
+        {
+            int customerId = Convert.ToInt32(dgvCustomers.SelectedRows[0].Cells["customerId"].Value);
+
+            if (MessageBox.Show("Are you sure you want to delete this customer?",
+                                "Confirm Deletion",
+                                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                bool success = CustomerDB.DeleteCustomer(customerId);
+
+                if (success)
+                    MessageBox.Show("Customer successfully deleted.");
+                else
+                    MessageBox.Show("Problem deleting customer.");
+
+                LoadCustomers();
+            }
+        }
+
+        private void btnCalendar_Click(object sender, EventArgs e)
+        {
+            using (var form = new CalendarForm())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    LoadCustomers();
+                }
+            }
+        }
+
+        private void CheckUpcomingAppointments(int userId)
+        {
+            DataTable upcoming = AppointmentsDB.GetUpcomingAppointments(userId);
+
+            if (upcoming.Rows.Count == 0)
+            {
+                MessageBox.Show("You have no appointments within the next 15 minutes.");
+                return;
+            }
+
+            StringBuilder alert = new StringBuilder();
+            alert.AppendLine("Upcoming appointments within 15 minutes:");
+
+            foreach (DataRow row in upcoming.Rows)
+            {
+                DateTime utcStart = (DateTime)row["start"];
+                DateTime localStart = utcStart.ToLocalTime();
+
+                alert.AppendLine(
+                    $"• Appointment ID {row["appointmentId"]}, starts at {localStart:MM/dd/yyyy hh:mm tt}"
+                );
+            }
+
+            MessageBox.Show(alert.ToString(), "Upcoming Appointment Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btnAddAppt_Click(object sender, EventArgs e)
+        {
+            if (dgvCustomers.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a customer first.");
+                return;
+            }
+
+            int customerId = Convert.ToInt32(dgvCustomers.CurrentRow.Cells["customerId"].Value);
+            string customerName = dgvCustomers.CurrentRow.Cells["customerName"].Value.ToString();
+
+            AddModifyAppointmentForm addForm = new AddModifyAppointmentForm(_userId, customerId, customerName);
+
+            if (addForm.ShowDialog() == DialogResult.OK)
+            {
+                LoadAllAppointments();
+            }
+        }
+
+        private void btnModAppt_Click(object sender, EventArgs e)
+        {
+            if (dgvAppts.CurrentRow == null)
+            {
+                MessageBox.Show("Please select an appointment to modify.");
+                return;
+            }
+
+            int appointmentId = Convert.ToInt32(dgvAppts.CurrentRow.Cells["appointmentId"].Value);
+
+            AddModifyAppointmentForm modifyForm =
+                new AddModifyAppointmentForm(appointmentId, _userId, true);
+
+            if (modifyForm.ShowDialog() == DialogResult.OK)
+            {
+                LoadAllAppointments();   // refresh dgv
+                MessageBox.Show("Appointment updated successfully.");
+            }
+        }
+
+        private void btnDeleteAppt_Click(object sender, EventArgs e)
+        {
+            if (dgvAppts.CurrentRow == null)
+            {
+                MessageBox.Show("Please select an appointment to delete.");
+                return;
+            }
+
+            int appointmentId = Convert.ToInt32(dgvAppts.CurrentRow.Cells["appointmentId"].Value);
+            string apptType = dgvAppts.CurrentRow.Cells["type"].Value.ToString();
+
+            DialogResult result = MessageBox.Show(
+                $"Are you sure you want to delete this appointment?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result != DialogResult.Yes)
+                return;
+
+            AppointmentsDB.DeleteAppointment(appointmentId);
+
+            LoadAllAppointments();
+
+            MessageBox.Show($"Appointment deleted.");
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            ReportsForm form = new ReportsForm();
+            form.Show();
+        }
     }
 }
+
+

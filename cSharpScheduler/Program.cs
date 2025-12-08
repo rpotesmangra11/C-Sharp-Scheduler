@@ -16,21 +16,21 @@ namespace cSharpScheduler
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
 
-            //using (LoginForm login = new LoginForm())
-            //{
-            //    if (login.ShowDialog() == DialogResult.OK)
-            //    {
-            //        Application.Run(new MainForm());
-            //    }
-            //    else
-            //    {
-            //        Application.Exit();
-            //    }
-            //}
+            using (LoginForm login = new LoginForm())
+            {
+                if (login.ShowDialog() == DialogResult.OK)
+                {
+                    int userId = login.LoggedInUserId;
+
+                    Application.Run(new MainForm(userId));
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }
+
         }
     }
 }

@@ -36,3 +36,7 @@ D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\System.Threading.Tasks.Ext
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\obj\Debug\cSharpSc.9C7A37F6.Up2Date
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\obj\Debug\cSharpScheduler.AddModifyCustomerForm.resources
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\obj\Debug\cSharpScheduler.LoginForm.resources
+D:\WGU\C969-Advanced-cSharp\cSharpScheduler\obj\Debug\cSharpScheduler.CalendarForm.resources
+D:\WGU\C969-Advanced-cSharp\cSharpScheduler\obj\Debug\cSharpScheduler.AddModifyAppointmentForm.resources
+D:\WGU\C969-Advanced-cSharp\cSharpScheduler\obj\Debug\cSharpScheduler.Forms.ReportsForm.resources
+D:\WGU\C969-Advanced-cSharp\cSharpScheduler\obj\Debug\cSharpScheduler.exe.config

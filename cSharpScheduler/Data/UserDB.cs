@@ -27,6 +27,23 @@ namespace cSharpScheduler.Data
                 }
             }
         }
+
+        public static int GetUserId(string username)
+        {
+            string sql = "SELECT userId FROM user WHERE userName = @user LIMIT 1";
+
+            using (var conn = DBConnection.GetConnection())
+            using (var cmd = new MySqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@user", username);
+                conn.Open();
+
+                object result = cmd.ExecuteScalar();
+
+                return result == null ? -1 : Convert.ToInt32(result);
+            }
+        }
+
     }
 
 }

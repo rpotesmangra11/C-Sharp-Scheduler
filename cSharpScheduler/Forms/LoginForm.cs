@@ -16,6 +16,8 @@ namespace cSharpScheduler
 {
     public partial class LoginForm : Form
     {
+        public int LoggedInUserId { get; private set; }
+
         public LoginForm()
         {
             InitializeComponent();
@@ -53,11 +55,12 @@ namespace cSharpScheduler
 
             return "";
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string user = txtUsername.Text;
             string pass = txtPassword.Text;
+
+            lblError.Visible = false;
 
             if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass))
             {
@@ -74,9 +77,13 @@ namespace cSharpScheduler
                 lblError.Visible = true;
                 return;
             }
+
+            LoggedInUserId = UserDB.GetUserId(user);
+
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
 
         private void btnLoginExit_Click(object sender, EventArgs e)
         {

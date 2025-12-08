@@ -115,6 +115,23 @@ namespace cSharpScheduler
             return null;
         }
 
+        public static bool DeleteCustomer(int customerId)
+        {
+            string sql = @"DELETE FROM customer WHERE customerId = @customerId";
+
+            using (var conn = DBConnection.GetConnection())
+            using (var cmd = new MySqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@customerId", customerId);
+
+                conn.Open();
+
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                return rowsAffected > 0;
+            }
+        }
+
         public static void UpdateCustomer(int customerId, string name, string address, string address2, string postal, string phone)
         {
             using (var conn = DBConnection.GetConnection())

@@ -86,7 +86,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(190, 97);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Multiline = false;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(275, 32);
@@ -96,7 +96,7 @@
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(190, 155);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtAddress.Multiline = false;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(275, 32);
@@ -106,7 +106,7 @@
             // txtPostal
             // 
             this.txtPostal.Location = new System.Drawing.Point(190, 271);
-            this.txtPostal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPostal.Margin = new System.Windows.Forms.Padding(4);
             this.txtPostal.Multiline = false;
             this.txtPostal.Name = "txtPostal";
             this.txtPostal.Size = new System.Drawing.Size(275, 32);
@@ -116,7 +116,7 @@
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(190, 329);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhone.Multiline = false;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(275, 32);
@@ -126,7 +126,7 @@
             // btnAddCustomerSave
             // 
             this.btnAddCustomerSave.Location = new System.Drawing.Point(153, 417);
-            this.btnAddCustomerSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddCustomerSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddCustomerSave.Name = "btnAddCustomerSave";
             this.btnAddCustomerSave.Size = new System.Drawing.Size(133, 50);
             this.btnAddCustomerSave.TabIndex = 8;
@@ -137,7 +137,7 @@
             // btnAddCustomerCancel
             // 
             this.btnAddCustomerCancel.Location = new System.Drawing.Point(340, 417);
-            this.btnAddCustomerCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddCustomerCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddCustomerCancel.Name = "btnAddCustomerCancel";
             this.btnAddCustomerCancel.Size = new System.Drawing.Size(133, 50);
             this.btnAddCustomerCancel.TabIndex = 9;
@@ -193,7 +193,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddModifyCustomerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer";

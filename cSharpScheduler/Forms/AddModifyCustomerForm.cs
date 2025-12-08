@@ -103,6 +103,12 @@ namespace cSharpScheduler
                 return false;
             }
 
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtPostal.Text.Trim(), @"^[0-9]+$"))
+            {
+                MessageBox.Show("Postal code may contain only digits.");
+                return false;
+            }
+
             if (!System.Text.RegularExpressions.Regex.IsMatch(txtPhone.Text.Trim(), @"^[0-9-]+$"))
             {
                 MessageBox.Show("Phone number may contain only digits and dashes.");
