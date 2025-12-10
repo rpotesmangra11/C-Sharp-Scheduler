@@ -1,7 +1,7 @@
 ﻿using cSharpScheduler;
 using cSharpScheduler.Forms;
 using cSharpScheduler.Models;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -105,8 +105,16 @@ namespace cSharpScheduler
 
         private void LoadAllAppointments()
         {
-            DataTable dt = AppointmentsDB.GetAllAppointments();
+            var dt = AppointmentsDB.GetAllAppointments();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                row["start"] = ((DateTime)row["start"]).ToLocalTime();
+                row["end"] = ((DateTime)row["end"]).ToLocalTime();
+            }
+
             dgvAppts.DataSource = dt;
+
         }
 
         private void dgvCustomers_CellClick(object sender, DataGridViewCellEventArgs e)

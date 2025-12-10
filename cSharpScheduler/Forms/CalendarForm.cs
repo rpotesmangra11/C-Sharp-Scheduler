@@ -73,6 +73,22 @@ namespace cSharpScheduler
         private void LoadAppointmentsForDay(DateTime date)
         {
             DataTable appointments = AppointmentsDB.GetAppointmentsByDate(date);
+
+            foreach (DataRow row in appointments.Rows)
+            {
+                if (row["start"] != DBNull.Value)
+                {
+                    DateTime utcStart = (DateTime)row["start"];
+                    row["start"] = utcStart.ToLocalTime();
+                }
+
+                if (row["end"] != DBNull.Value)
+                {
+                    DateTime utcEnd = (DateTime)row["end"];
+                    row["end"] = utcEnd.ToLocalTime();
+                }
+            }
+
             dgvCalendar.DataSource = appointments;
 
             FormatCalendarColumns();

@@ -13,7 +13,6 @@ D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\Google.Protobuf.dll
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\K4os.Compression.LZ4.dll
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\K4os.Compression.LZ4.Streams.dll
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\K4os.Hash.xxHash.dll
-D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\MySql.Data.dll
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\System.Buffers.dll
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\System.IO.Pipelines.dll
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\System.Memory.dll
@@ -26,7 +25,6 @@ D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\Google.Protobuf.xml
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\K4os.Compression.LZ4.xml
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\K4os.Compression.LZ4.Streams.xml
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\K4os.Hash.xxHash.xml
-D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\MySql.Data.xml
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\System.Buffers.xml
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\System.IO.Pipelines.xml
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\System.Memory.xml
@@ -39,4 +37,14 @@ D:\WGU\C969-Advanced-cSharp\cSharpScheduler\obj\Debug\cSharpScheduler.LoginForm.
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\obj\Debug\cSharpScheduler.CalendarForm.resources
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\obj\Debug\cSharpScheduler.AddModifyAppointmentForm.resources
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\obj\Debug\cSharpScheduler.Forms.ReportsForm.resources
+D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\MySqlConnector.dll
+D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\MySqlConnector.xml
+D:\WGU\C969-Advanced-cSharp\cSharpScheduler\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 D:\WGU\C969-Advanced-cSharp\cSharpScheduler\obj\Debug\cSharpScheduler.exe.config

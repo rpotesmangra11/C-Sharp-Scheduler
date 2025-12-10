@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 
 namespace cSharpScheduler
@@ -23,14 +24,31 @@ namespace cSharpScheduler
             InitializeComponent();
             DetectLocation();
             lblError.Visible = false;
+            this.Load += LoginForm_Load;
+        }
 
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            comboLanguage.Items.Add("English");
+            comboLanguage.Items.Add("Spanish");
+            comboLanguage.SelectedIndex = 0;
+        }
+
+        private void comboLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboLanguage.SelectedItem.ToString() == "Spanish")
+                language = "es";
+            else
+                language = "en";
         }
 
         private void DetectLocation()
         {
             RegionInfo region = new RegionInfo(CultureInfo.CurrentCulture.Name);
-
-            lblRegion.Text = "Region: " + region.EnglishName;
+            TimeZoneInfo localZone = TimeZoneInfo.Local;
+            lblRegion.Text =
+            $"Region: {region.EnglishName}{Environment.NewLine}" +
+            $"Time Zone: {localZone.StandardName}";
         }
 
         private string language = "en";
@@ -79,6 +97,11 @@ namespace cSharpScheduler
             }
 
             LoggedInUserId = UserDB.GetUserId(user);
+
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string logFile = Path.Combine(desktopPath, "Login_Audit.txt");
+            string logEntry = $"{DateTime.Now}: {user} logged in";
+            File.AppendAllText(logFile, logEntry + Environment.NewLine);
 
             this.DialogResult = DialogResult.OK;
             this.Close();
