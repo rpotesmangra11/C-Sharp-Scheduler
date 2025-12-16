@@ -12,7 +12,7 @@ namespace cSharpScheduler
     public static class DBConnection
     {
         private const string connString =
-            "server=127.0.0.1;user id=root;password=password;database=client_schedule;";
+            "server=127.0.0.1;user id=sqlUser;password=Passw0rd!;database=client_schedule;";
 
         public static MySqlConnection GetConnection()
         {
